@@ -8,15 +8,18 @@ services:
       MYSQL_PASSWORD: shubham
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
-      - "./db:/docker-entrypoint-initdb.d"
+      - "~/DOCKER/MYSQL:/docker-entrypoint-initdb.d"
     networks:
       - lamp-docker
   www:
     depends_on:
       - db
     image: myphp:latest
+    build:
+      context: .
+      dockerfile: ./dockerfile
     volumes:
-      - "/root/DOCKER/PHP:/var/www/html"
+      - "./:/var/www/html"
     ports:
       - 80:80
       - 443:443
