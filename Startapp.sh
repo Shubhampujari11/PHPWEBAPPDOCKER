@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#TEST for webhook#
+#TEST for webhook1#
 echo -e "\n\n########### Starting docker compose and build with in #######\n\n"
 sleep 5
 echo -e "Running docker compose..."
